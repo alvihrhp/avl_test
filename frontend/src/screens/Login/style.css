@@ -1,0 +1,6 @@
+.company-logo {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+        linear-gradient(95.73deg, #0B6BD8 5.05%, #0157BF 104.25%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
