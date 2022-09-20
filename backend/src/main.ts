@@ -4,8 +4,6 @@ import cors from "cors";
 
 dotenv.config();
 
-console.log("test");
-
 const app: Express = express();
 const port = process.env.PORT;
 
