@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-/** CSS */
-import "./style.css";
 /** Components */
 import { Form } from "../../components";
 
 interface Props {}
 
-const Login: React.FC<Props> = () => {
+const Register: React.FC<Props> = () => {
   const [inputs, setInputs] = useState<{ [key: string]: any }[]>([
     {
       label: "Email",
@@ -30,11 +28,24 @@ const Login: React.FC<Props> = () => {
           "block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm",
       },
     },
+    {
+      label: "Confirm Password",
+      attr: {
+        id: "confirm-password",
+        name: "confirm-password",
+        type: "password",
+        value: "",
+        className:
+          "block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm",
+      },
+    },
   ]);
 
-  const signIn = async () => {
+  const signUp = async () => {
     try {
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -42,7 +53,7 @@ const Login: React.FC<Props> = () => {
       <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-            Sign in to your account
+            Sign up to your account
           </h2>
         </div>
 
@@ -51,10 +62,10 @@ const Login: React.FC<Props> = () => {
             <Form
               inputs={inputs}
               setInputs={setInputs}
-              btnName="Sign In"
-              submitForm={signIn}
+              submitForm={signUp}
+              btnName="Sign Up"
+              from={"register"}
             />
-
             <div className="mt-6">
               <div className="relative">
                 <div className="absolute inset-0 flex items-center">
@@ -119,4 +130,4 @@ const Login: React.FC<Props> = () => {
   );
 };
 
-export default Login;
+export default Register;
